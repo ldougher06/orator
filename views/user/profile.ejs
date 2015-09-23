@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./head', {page: 'Profile'}) %>
+  <%- include('./stylesheets.ejs') %>
+
+  <body>
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1><span>Register</span></h1>
+        <form action="/profile" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label for="company">Place of Work</label>
+            <input type="text" class="form-control" name="company">
+          </div>
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" class="form-control" name="position">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label for="dp">Choose Availability:</label>
+            <input type="date" class="form-control" id='dp'/>
+          </div>
+          <div>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="option1"> HTML
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2"> CSS
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox3" value="option3"> Javascript
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox4" value="option4"> AngularJS
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox5" value="option5"> jQuery
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox7" value="option7"> Node.js
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox8" value="option8"> MongoDB
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox9" value="option9"> SQL
+            </label>
+          </div>
+          <button class="btn btn-primary">Save Profile</button>
+          <button class="btn btn-danger"><a href="/">View Calendar</a></button>
+<!-- change route to calendar -->
+        </form>
+        <p><a href="/">Return Home</a></p>
+      </div>
+    </div>
+    <script src='/lib/dist/jquery.min.js'></script>
+    <script src='/lib/dist/moment.min.js'></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+    $(#dp).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+    </script>
+  </body>
+</html>

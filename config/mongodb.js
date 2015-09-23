@@ -7,3 +7,4 @@ if(!global.db) {
     global.db = db;
   });
 };
+

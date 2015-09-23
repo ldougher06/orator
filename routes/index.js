@@ -1,33 +1,31 @@
 var express = require('express');
+var moment = require('moment');
+var ObjectID = require('mongodb').ObjectID;
 var router = express.Router();
 
-/// ROUTES ////
+var User = require('../models/User');
 
-//////route, callback
-router.get('/', function (req, res) {
-  res.send('Yelloooooo');
+router.get('/', function goHome (req, res) {
+  res.render('./user/index.ejs');
 });
 
-router.get('/hello', function (req, res) {
-  res.send('Hello!');
+router.get('/profile', function (req, res) {
+  res.render('./user/profile.ejs');
 });
 
-
-router.get('/test', function (req, res, next) {
-  res.write('test1');
-  next();
+router.post('/profile', function userProfile(req, res) {
+  var collection = global.db.collection('user');
+  collection.save(req.body, function(){
+    res.redirect('/calendar');
+  });
 });
 
-router.get('/test', function (req, res) {
-  res.end('test2');
+router.get('/test', function testIng(req, res){
+  res.send('hola');
 });
 
-router.get('/json', function (req, res) {
-  res.send({an: 'object'});
-});
-
-router.get('/thisshoulderror', function (req, res) {
-  res.send(badVariable);
+router.get('/calendar', function userCalendar(req, res) {
+  res.render('./user/calendar.ejs');
 });
 
 module.exports = router;
