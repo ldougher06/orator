@@ -1,6 +1,5 @@
 var express = require('express');
-var moment = require('moment');
-var ObjectID = require('mongodb').ObjectID;
+//var moment = require('moment');
 var router = express.Router();
 
 var User = require('../models/User');
@@ -13,15 +12,12 @@ router.get('/profile', function (req, res) {
   res.render('./user/profile.ejs');
 });
 
-router.post('/profile', function userProfile(req, res) {
+router.post('/profile', function (req, res) {
+  console.log(req);
   var collection = global.db.collection('user');
   collection.save(req.body, function(){
     res.redirect('/calendar');
   });
-});
-
-router.get('/test', function testIng(req, res){
-  res.send('hola');
 });
 
 router.get('/calendar', function userCalendar(req, res) {

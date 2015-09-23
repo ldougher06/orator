@@ -24,6 +24,7 @@
     "jquery": "~2.1.4",
     "animateCSS": "~1.2.1",
     "font-awesome": "~4.4.0",
-    "pure": "~0.6.0"
+    "pure": "~0.6.0",
+    "moment": "~2.10.6"
   }
 }

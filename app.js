@@ -1,17 +1,14 @@
 var fs = require('fs');
 
+var express = require('express');
 var lessCSS = require('less-middleware');
 var morgan = require('morgan');
+var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var express = require('express');
 var session = require('express-session');
 
 var app = express();
-
-var routes = require('./routes/index');
-
-app.use('/', routes);
 
 if(process.env.NODE_ENV !== 'production') {
   require('./config/secrets');
@@ -24,19 +21,24 @@ app.set('case sensitive routing', true);
 
 app.locals.title = 'Orator';
 
-app.use(session({
+/*app.use(session({
   secret: 'oratororatororator'
-}));
+}));*/
 
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(lessCSS('public/less'));
+app.use(bodyParser.json());
+//app.use(lessCSS('public/less'));
 
-var logStream = fs.createWriteStream('access.log', {flags: 'a'});
-app.use(morgan('combined', {stream: logStream}));
+//var logStream = fs.createWriteStream('access.log', {flags: 'a'});
+// app.use(morgan('combined', {stream: logStream}));
 app.use(morgan('dev'));
 
 app.use(express.static('public'));
+
+var routes = require('./routes/index');
+
+app.use('/', routes);
 
 var port = process.env.PORT || 3000;
 
