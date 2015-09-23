@@ -13,7 +13,7 @@ router.get('/profile', function (req, res) {
 });
 
 router.post('/profile', function (req, res) {
-  console.log(req);
+  console.log(req.body);
   var collection = global.db.collection('user');
   collection.save(req.body, function(){
     res.redirect('/calendar');
