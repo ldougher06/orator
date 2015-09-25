@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <%- include('./head', {page: 'Profile'}) %>
-  <%- include('./stylesheets.ejs') %>
-
+  <head>
+    <%- include('./head', {page: 'Profile'}) %>
+    <%- include('./stylesheets.ejs') %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  </head>
   <body>
     <div class="container">
       <div class="col-sm-6 col-sm-offset-3">
@@ -25,37 +27,38 @@
             <input type="text" class="form-control" name="email">
           </div>
           <div class="form-group">
-            <label for="dp">Choose Availability:</label>
-            <input type="date" class="form-control" id='dp'/>
+            <label for="date">Date</label>
+            <input type="date" id="dp" class="form-control" name="date">
           </div>
           <div>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1"> HTML
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox2" value="option2"> CSS
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox3" value="option3"> Javascript
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox4" value="option4"> AngularJS
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox5" value="option5"> jQuery
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox7" value="option7"> Node.js
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox8" value="option8"> MongoDB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox9" value="option9"> SQL
-            </label>
+            <label for="HTML">HTML</label>
+            <input class="form-control" type="checkbox" value="qualified" name="HTML">
+            <label for="CSS">CSS</label>
+            <input class="form-control" type="checkbox" value="qualified" name="CSS">
+            <label for="Javascript">Javascript</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Javascript">
+            <label for="checkbox">AngularJS</label>
+            <input class="form-control" type="checkbox" value="qualified" name="AngularJS">
+            <label for="checkbox">jQuery</label>
+            <input class="form-control" type="checkbox" value="qualified" name="jQuery">
+            <label for="checkbox">Node.js</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Node.js">
+            <label for="checkbox">MongoDB</label>
+            <input class="form-control" type="checkbox" value="qualified" name="MongoDB">
+            <label for="checkbox">SQL</label>
+            <input class="form-control" type="checkbox" value="qualified" name="SQL">
+            <label for="checkbox">Java</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Java">
+            <label for="checkbox">C#</label>
+            <input class="form-control" type="checkbox" value="qualified" name="C#">
+            <label for="checkbox">PHP</label>
+            <input class="form-control" type="checkbox" value="qualified" name="PHP">
+            <label for="checkbox">Ruby</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Ruby">
+            <label for="checkbox">Ruby on Rails</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Ruby on Rails">
           </div>
           <input class="btn btn-primary" type="submit" value="save profile">
-          <button class="btn btn-danger"><a href="/">View Calendar</a></button>
 <!-- change route to calendar -->
         </form>
         <p><a href="/">Return Home</a></p>
@@ -63,7 +66,15 @@
     </div>
     <script src='lib/jquery/dist/jquery.min.js'></script>
     <!--<script src='lib/moment/min/moment.min.js'></script>-->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>$('#dp').datepicker({changeMonth: true, changeYear: true});</script>
+    <script type="text/javascript">
+      $(function() {
+        $( "#dp" ).datepicker({
+          //showButtonPanel: true
+        });
+      });
+  </script>
+    </script>
   </body>
 </html>

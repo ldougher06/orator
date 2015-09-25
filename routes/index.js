@@ -1,8 +1,8 @@
 var express = require('express');
-//var moment = require('moment');
 var router = express.Router();
 
 var User = require('../models/User');
+var Nodemailer = require('../models/Nodemailer');
 
 router.get('/', function goHome (req, res) {
   res.render('./user/index.ejs');
@@ -16,12 +16,14 @@ router.post('/profile', function (req, res) {
   console.log(req.body);
   var collection = global.db.collection('user');
   collection.save(req.body, function(){
-    res.redirect('/calendar');
+    Nodemailer.send(req.body, function (){
+       res.redirect('/exit');
+     });
   });
 });
 
-router.get('/calendar', function userCalendar(req, res) {
-  res.render('./user/calendar.ejs');
+router.get('/exit', function(req, res){
+  res.render('./user/exit.ejs');
 });
 
 module.exports = router;
