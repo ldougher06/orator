@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./head', {page: 'Profile'}) %>
+    <%- include('./stylesheets.ejs') %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1><span>Register</span></h1>
+        <form name="register" action="/profile" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="form-group">
+            <label for="company">Place of Work</label>
+            <input type="text" class="form-control" name="company">
+          </div>
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" class="form-control" name="position">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="dp" class="form-control" name="date">
+          </div>
+          <div>
+            <label for="HTML">HTML</label>
+            <input class="form-control" type="checkbox" value="qualified" name="HTML">
+            <label for="CSS">CSS</label>
+            <input class="form-control" type="checkbox" value="qualified" name="CSS">
+            <label for="Javascript">Javascript</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Javascript">
+            <label for="checkbox">AngularJS</label>
+            <input class="form-control" type="checkbox" value="qualified" name="AngularJS">
+            <label for="checkbox">jQuery</label>
+            <input class="form-control" type="checkbox" value="qualified" name="jQuery">
+            <label for="checkbox">Node.js</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Node.js">
+            <label for="checkbox">MongoDB</label>
+            <input class="form-control" type="checkbox" value="qualified" name="MongoDB">
+            <label for="checkbox">SQL</label>
+            <input class="form-control" type="checkbox" value="qualified" name="SQL">
+            <label for="checkbox">Java</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Java">
+            <label for="checkbox">C#</label>
+            <input class="form-control" type="checkbox" value="qualified" name="C#">
+            <label for="checkbox">PHP</label>
+            <input class="form-control" type="checkbox" value="qualified" name="PHP">
+            <label for="checkbox">Ruby</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Ruby">
+            <label for="checkbox">Ruby on Rails</label>
+            <input class="form-control" type="checkbox" value="qualified" name="Ruby on Rails">
+          </div>
+          <input class="btn btn-primary" type="submit" value="save profile">
+        </form>
+        <p><a href="/">Return Home</a></p>
+      </div>
+    </div>
+    <script src='lib/jquery/dist/jquery.min.js'></script>
+    <script type="text/javascript">
+      $(function() {
+        $( "#dp" ).datepicker({
+          //showButtonPanel: true
+        });
+      });
+  </script>
+    </script>
+  </body>
+</html>
