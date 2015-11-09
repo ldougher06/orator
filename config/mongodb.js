@@ -6,7 +6,7 @@ var url = process.env.MONGODB_URL ||
   'mongodb://' +
   MONGODB_USER +
   ':' + MONGODB_PASSWORD +
-  '@ds051953.mongolab.com:51953/orator';
+  '@ds041934.mongolab.com:41934/heroku_tkzk01sm';
 
 if(!global.db) {
   mongo.connect(url, function(err, db) {
