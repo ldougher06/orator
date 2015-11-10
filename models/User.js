@@ -8,17 +8,17 @@ function User (u) {
 
 Object.defineProperty(User, 'collection', {
   get: function () {
-    return mongo.getDb().collection('user');
+    return mongo.getDb().collection('heroku_orator');
     //return global.db.collection('user');
   }
 });
 
 User.create = function (u, cb) {
-  User.collection.insertOne(user, cb);
+  User.collection.insertOne(heroku_orator, cb);
 };
 
 User.prototype.save = function(cb) {
-  User.collection.save(user, cb);
+  User.collection.save(heroku_orator, cb);
 }
 
 User.setHidden = function (id, cb) {
