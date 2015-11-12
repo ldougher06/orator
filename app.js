@@ -4,15 +4,14 @@ var express = require('express');
 var lessCSS = require('less-middleware');
 var morgan = require('morgan');
 var mongodb = require('mongodb');
-var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var app = express();
 
-if(process.env.NODE_ENV !== 'production') {
-  require('./config/secrets');
-}
+// if(process.env.NODE_ENV !== 'production') {
+//   require('./config/secrets');
+// }
 console.log('###################################');
 require('./config/mongodb');
 
