@@ -9,7 +9,6 @@ var url = process.env.MONGODB_URL ||
   '@ds053764.mongolab.com:53764/heroku_1dlj3vsk';
 
 mongoose.connect(url);
-console.log("mongo err: ", err);
 console.log("connected to database: " + url);
 
 // if(!global.db) {
