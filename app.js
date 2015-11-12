@@ -10,10 +10,10 @@ var session = require('express-session');
 
 var app = express();
 
-if(process.env.NODE_ENV !== 'production') {
+if(process.env.NODE_ENV == 'production') {
   require('./config/secrets');
 }
-
+console.log('###################################');
 require('./config/mongodb');
 
 app.set('view engine', 'ejs');
