@@ -8,7 +8,7 @@ function User (u) {
 
 Object.defineProperty(User, 'collection', {
   get: function () {
-    return mongo.getDb().collection('heroku_orator');
+    return mongo.getDb().collection('user');
     //return global.db.collection('user');
   }
 });

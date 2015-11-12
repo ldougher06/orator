@@ -14,7 +14,7 @@ router.get('/profile', function (req, res) {
 
 router.post('/profile', function (req, res) {
   console.log(req.body);
-  var collection = global.db.collection('heroku_orator');
+  var collection = global.db.collection('user');
   collection.save(req.body, function(){
     Nodemailer.send(req.body, function (){
        res.redirect('/exit');
